@@ -1,14 +1,19 @@
 ﻿
 from fastapi.middleware.cors import CORSMiddleware
-from ai_engine import detect_milk_anomalies
 from fastapi import Query
 from datetime import date
 from fastapi import Depends, FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from sqlalchemy import func
 from sqlalchemy.orm import Session
-from database import Base, engine, get_db
-import models
+try:
+    from .ai_engine import detect_milk_anomalies
+    from .database import Base, engine, get_db
+    from . import models
+except ImportError:
+    from ai_engine import detect_milk_anomalies
+    from database import Base, engine, get_db
+    import models
 
 Base.metadata.create_all(bind=engine)
 

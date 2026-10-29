@@ -1,8 +1,11 @@
 ﻿from datetime import date
 from sqlalchemy import Date, Float, ForeignKey, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from database import Base
-
+try:
+    from .database import Base
+except ImportError:
+    from database import Base
+    
 class Farm(Base):
     __tablename__ = "farms"
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
