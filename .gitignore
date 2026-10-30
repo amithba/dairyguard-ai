@@ -13,3 +13,5 @@ __pycache__/
 .pytest_cache/
 **/.pytest_cache/
 *.py[cod]
+backend/*_before_auth_backup.py
+project_review.txt

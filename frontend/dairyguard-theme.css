@@ -1,0 +1,112 @@
+/* DairyGuard AI dark theme: charcoal/forest base, orange headings, blue accents.
+   Imported after App.css so it overrides the existing light theme.
+   The existing logo markup/image is intentionally unchanged. */
+:root {
+  color-scheme: dark;
+  --dg-bg: #071411;
+  --dg-bg-soft: #0b1d19;
+  --dg-panel: #10231f;
+  --dg-panel-2: #142b27;
+  --dg-border: #29443f;
+  --dg-text: #eaf2f4;
+  --dg-muted: #a8bbc2;
+  --dg-orange: #ff861f;
+  --dg-blue: #55a9ff;
+  --dg-blue-deep: #2478cf;
+  --dg-green: #43c878;
+}
+html, body, #root { min-height: 100%; background: var(--dg-bg); color: var(--dg-text); }
+body {
+  background:
+    radial-gradient(ellipse at 12% 8%, rgba(34, 112, 90, .18), transparent 38%),
+    radial-gradient(ellipse at 90% 18%, rgba(38, 112, 190, .12), transparent 35%),
+    var(--dg-bg) !important;
+  color: var(--dg-text);
+}
+.app-shell { background: transparent !important; color: var(--dg-text) !important; }
+.auth-shell { background: transparent !important; }
+.auth-card {
+  background: linear-gradient(155deg, rgba(15, 35, 31, .98), rgba(8, 24, 22, .98)) !important;
+  color: var(--dg-text) !important;
+  border: 1px solid var(--dg-border) !important;
+  box-shadow: 0 24px 70px rgba(0,0,0,.32) !important;
+}
+.auth-heading, .auth-brand h1, .brand h1, .section-heading, .panel-heading h2,
+.topbar h1, .topbar h2, .auth-card h1, .auth-card h2 {
+  color: var(--dg-orange) !important;
+}
+.auth-heading { text-shadow: 0 0 24px rgba(255,134,31,.08); }
+.subtitle, .eyebrow { color: #91b5b5 !important; }
+.auth-card p, .auth-footnote, .auth-switch, .muted-copy, .stat-note,
+.panel p, .topbar p { color: var(--dg-muted) !important; }
+.auth-form label, .record-form label { color: #d9e7ec !important; }
+.auth-input, .auth-card input, .record-form input, .record-form select,
+input, select, textarea {
+  background: #10231f !important;
+  color: #edf5f7 !important;
+  border: 1px solid #35514e !important;
+}
+.auth-input::placeholder, input::placeholder, textarea::placeholder { color: #8da4a8 !important; }
+.auth-input:focus, .auth-card input:focus, .record-form input:focus,
+.record-form select:focus, input:focus, select:focus, textarea:focus {
+  border-color: var(--dg-blue) !important;
+  box-shadow: 0 0 0 3px rgba(85,169,255,.16) !important;
+  outline: none !important;
+}
+.auth-submit, .primary-button, .quick-action-buttons button {
+  background: linear-gradient(135deg, #237ed0, #155da7) !important;
+  color: #fff !important;
+  border: 1px solid rgba(115,190,255,.25) !important;
+  box-shadow: 0 8px 24px rgba(21,93,167,.22);
+}
+.auth-submit:hover, .primary-button:hover, .quick-action-buttons button:hover {
+  filter: brightness(1.12);
+}
+.auth-switch button, .auth-switch a, .auth-card a { color: var(--dg-blue) !important; }
+.sidebar {
+  background: #081b17 !important;
+  color: #dbe9e7 !important;
+  border-right: 1px solid #1e3933 !important;
+}
+.sidebar .brand, .sidebar .brand h1 { color: var(--dg-orange) !important; }
+.nav-item { color: #c4d6d5 !important; }
+.nav-item:hover { background: #142e28 !important; }
+.nav-item.active { background: linear-gradient(90deg, rgba(255,134,31,.17), rgba(85,169,255,.12)) !important; color: #fff !important; border-left: 3px solid var(--dg-orange) !important; }
+.main-content, .topbar { background: transparent !important; color: var(--dg-text) !important; }
+.panel, .stat-card, .quick-actions, .record-panel, .insight-panel {
+  background: linear-gradient(145deg, #10231f, #0d201c) !important;
+  color: var(--dg-text) !important;
+  border: 1px solid var(--dg-border) !important;
+  box-shadow: 0 12px 34px rgba(0,0,0,.12) !important;
+}
+.stat-card h2, .stat-card strong, .stat-card .value { color: var(--dg-orange) !important; }
+.insight-icon.blue { background: rgba(85,169,255,.16) !important; color: var(--dg-blue) !important; }
+.insight-icon.orange { background: rgba(255,134,31,.15) !important; color: var(--dg-orange) !important; }
+.insight-icon.green { background: rgba(67,200,120,.15) !important; color: var(--dg-green) !important; }
+.live-label { background: rgba(85,169,255,.12) !important; color: #8fc7ff !important; }
+.status-dot { background: var(--dg-green) !important; }
+.error-banner, .auth-error {
+  color: #ffb4b4 !important;
+  background: rgba(130, 32, 42, .22) !important;
+  border: 1px solid rgba(255, 100, 110, .35) !important;
+}
+.success-banner, .notice {
+  color: #a5f2c2 !important;
+  background: rgba(32, 132, 77, .18) !important;
+  border: 1px solid rgba(67,200,120,.25) !important;
+}
+.refresh-button, .logout-button {
+  background: #102a35 !important;
+  color: #b9ddff !important;
+  border: 1px solid #31566b !important;
+}
+table, .table-wrap { color: var(--dg-text) !important; }
+th { color: var(--dg-blue) !important; }
+td, th { border-color: #29443f !important; }
+tr:hover td { background: rgba(85,169,255,.045) !important; }
+button { transition: filter .15s ease, transform .15s ease; }
+button:active { transform: translateY(1px); }
+@media (max-width: 700px) {
+  .auth-card { margin: 16px !important; padding: 24px !important; }
+  .sidebar { border-right: 0 !important; border-bottom: 1px solid #1e3933 !important; }
+}
