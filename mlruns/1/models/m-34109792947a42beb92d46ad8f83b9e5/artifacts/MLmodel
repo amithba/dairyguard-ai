@@ -1,0 +1,24 @@
+artifact_path: file:C:/Users/amith/OneDrive/Desktop/dairyguard-ai/mlruns/1/models/m-34109792947a42beb92d46ad8f83b9e5/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.13.14
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.1
+    skops_trusted_types:
+    - sklearn.tree._tree.Tree
+mlflow_version: 3.17.2
+model_id: m-34109792947a42beb92d46ad8f83b9e5
+model_size_bytes: 3573748
+model_uuid: m-34109792947a42beb92d46ad8f83b9e5
+prompts: null
+run_id: 0ecac86b7d6d4cb69716e6eb499d5125
+utc_time_created: '2026-10-30 09:39:28.996696'

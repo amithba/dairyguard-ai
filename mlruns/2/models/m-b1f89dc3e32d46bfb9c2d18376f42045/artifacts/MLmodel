@@ -1,0 +1,22 @@
+artifact_path: file:C:/Users/amith/OneDrive/Desktop/dairyguard-ai/mlruns/2/models/m-b1f89dc3e32d46bfb9c2d18376f42045/artifacts
+flavors:
+  python_function:
+    data: data
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.tensorflow
+    python_version: 3.13.14
+  tensorflow:
+    code: null
+    data: data
+    keras_version: 2.21.0
+    model_type: keras
+    save_format: tf
+mlflow_version: 3.17.2
+model_id: m-b1f89dc3e32d46bfb9c2d18376f42045
+model_size_bytes: 34099
+model_uuid: m-b1f89dc3e32d46bfb9c2d18376f42045
+prompts: null
+run_id: 89ea3587c546470287ef4794317f21ef
+utc_time_created: '2026-10-30 09:49:55.893051'
