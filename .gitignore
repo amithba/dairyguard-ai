@@ -17,3 +17,8 @@ backend/*_before_auth_backup.py
 project_review.txt
 backend/.env.docker
 /qml_weights.npy
+mlflow.db
+mlruns/
+dairyguard-images.tar
+backend/.env
+backend/.env.docker

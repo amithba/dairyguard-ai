@@ -1,0 +1,56 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dairyguard-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dairyguard-backend
+  template:
+    metadata:
+      labels:
+        app: dairyguard-backend
+    spec:
+      containers:
+        - name: backend
+          image: dairyguard-ai-backend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: dairyguard-secrets
+                  key: POSTGRES_USER
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: dairyguard-secrets
+                  key: POSTGRES_PASSWORD
+            - name: POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  name: dairyguard-secrets
+                  key: POSTGRES_DB
+            - name: DATABASE_URL
+              value: "postgresql+psycopg://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@postgres:5432/$(POSTGRES_DB)"
+            - name: JWT_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: dairyguard-secrets
+                  key: JWT_SECRET_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dairyguard-backend
+spec:
+  selector:
+    app: dairyguard-backend
+  ports:
+    - port: 8000
+      targetPort: 8000
+  type: ClusterIP
