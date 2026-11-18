@@ -146,7 +146,6 @@ pytest==9.2.0
 python-dateutil==2.9.0.post0
 python-dotenv==1.2.4
 python-multipart==0.0.32
-pywin32==312
 PyYAML==6.0.3
 requests==2.34.2
 rich==15.0.0
